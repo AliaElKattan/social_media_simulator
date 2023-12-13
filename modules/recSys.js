@@ -17,7 +17,7 @@ var assumptions;
 var totalInitialMatching;
 var lastRecommendedSketch = null;
 
-const feed_testing = 0;
+const feed_testing = 1;
 // Start exports section
 
 /**
@@ -336,9 +336,21 @@ function getAssumption(topTrait){
  */
 function getContentSketchName(id){
 
+var sketches = ['experiment1'];
+
+// var sketches = ['experiment1']
+
+if (id < sketches.length)
+return sketches[id];
+
+else return sketches[0]
+
 // sketchName: sketch.id
 
-    return contentDict[id].sketchName;
+    // console.log("sketch name: ", contentDict[id].sketchName)
+    // console.log("id", id);
+    // return "textBounce"
+    // return contentDict[id].sketchName;
 }
 
 // End exports

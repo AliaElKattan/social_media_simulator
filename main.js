@@ -179,6 +179,7 @@ function startIntro(){
     document.getElementById("intro").style.display = "flex";
     inIntro = true;
     introPages = document.getElementsByClassName("intro-page");
+    console.log("length", introPages.length);
     for (var i = 0; i < introPages.length; i++){
         introPages[i].style.display = "flex";
         introPages[i].style.zIndex = 5 + introPages.length - i;
@@ -212,12 +213,13 @@ function onIntroButtonClicked(){
     // Check if we need to wait
     if (introIndex == 2){
         recSys.createNewUser(interestDict);
+        console.log("entered")
         setPreferences(menu);
         toggleInfoMenu(false);
         var contentIdList = recSys.initializeFeed();
         loadContent(initialPostLoad, contentIdList);
 
-        setTimeout(onIntroButtonClicked, 4000);
+        setTimeout(onIntroButtonClicked, 500);
     }
 
     setContentDraw();
@@ -282,7 +284,10 @@ function loadContent(amount, idList){
             contentIndex = 0;  
         }
 
+        // var id = ids[i];
         var id = isMessagePost ? "message-" + (totalPosts + i) : idList[contentIndex];
+        
+
         var post = isMessagePost ? createMessagePost(scriptByIndex[totalPosts + i], totalPosts + i) : createContentPost(totalPosts + i, id);
         post.setAttribute('draggable', true);
         device.appendChild(post);
@@ -303,7 +308,11 @@ function createContentPost(index, contentId){
     var gradient = document.createElement("div");
     gradient.classList = "black-gradient";
     post.appendChild(gradient);
-    var name = recSys.getContentSketchName(contentId);
+
+    // var name = recSys.getContentSketchName(contentId);
+
+    var name = recSys.getContentSketchName(index);
+
     var contentTemplate = new p5(eval(name), post);
     setupContentAttributes(contentTemplate, contentId);
 
