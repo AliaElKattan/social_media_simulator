@@ -83,41 +83,44 @@ function createNewUser(statedPreferences){
 }
 
 function initializeFeed(){
-    var [matchingContent, nonMatchingContent] = getMatchingAndNonMatchingContent();
-    totalInitialMatching = matchingContent.length;
-    console.log("found this much matching content",totalInitialMatching )
+    // var [matchingContent, nonMatchingContent] = getMatchingAndNonMatchingContent();
+    // totalInitialMatching = matchingContent.length;
+    // console.log("found this much matching content",totalInitialMatching )
 
     var feedList = [];
-    var combinedContent = matchingContent.concat(nonMatchingContent);
+    // var combinedContent = matchingContent.concat(nonMatchingContent);
 
-    while (feedList.length < 6 && combinedContent.length > 0) {
-        for (var i = 0; i < 4; i++) {
-            var selectedId = selectOneAtRandom(matchingContent);
+    // while (feedList.length < 6 && combinedContent.length > 0) {
+    //     for (var i = 0; i < 4; i++) {
+    //         var selectedId = selectOneAtRandom(matchingContent);
             
-            if (feedList.length === 0 || contentDict[selectedId].id_recsys !== contentDict[feedList[feedList.length - 1]].id_recsys) {
-                feedList.push(selectedId);
-                console.log("Added " + selectedId + " to initial feed with match score of " + contentDict[selectedId].matchScore + ", is it matching? " + (contentDict[selectedId].matchScore >= MATCH_THRESHOLD));
-            }
-        }
+    //         if (feedList.length === 0 || contentDict[selectedId].id_recsys !== contentDict[feedList[feedList.length - 1]].id_recsys) {
+    //             feedList.push(selectedId);
+    //             console.log("Added " + selectedId + " to initial feed with match score of " + contentDict[selectedId].matchScore + ", is it matching? " + (contentDict[selectedId].matchScore >= MATCH_THRESHOLD));
+    //         }
+    //     }
 
-        for (var i=0; i < 3; i++){
-            var selectedId = selectOneAtRandom(combinedContent);
+    //     for (var i=0; i < 3; i++){
+    //         var selectedId = selectOneAtRandom(combinedContent);
             
-            if (feedList.length === 0 || contentDict[selectedId].id_recsys !== contentDict[feedList[feedList.length - 1]].id_recsys) {
-                feedList.push(selectedId);
-                console.log("Added " + selectedId + " to initial feed with match score of " + contentDict[selectedId].matchScore + ", is it matching? " + (contentDict[selectedId].matchScore >= MATCH_THRESHOLD));
-            }
-        }
+    //         if (feedList.length === 0 || contentDict[selectedId].id_recsys !== contentDict[feedList[feedList.length - 1]].id_recsys) {
+    //             feedList.push(selectedId);
+    //             console.log("Added " + selectedId + " to initial feed with match score of " + contentDict[selectedId].matchScore + ", is it matching? " + (contentDict[selectedId].matchScore >= MATCH_THRESHOLD));
+    //         }
+    //     }
         
-        // Remove the selectedId from combinedContent
-        combinedContent = combinedContent.filter(id => id !== selectedId);
-    }
+    //     // Remove the selectedId from combinedContent
+    //     combinedContent = combinedContent.filter(id => id !== selectedId);
+    // }
 
-    if (feedList.length < 6 && feed_testing == 0) {
-        console.log("Error: Not enough content found.");
-        return [];
-    }
+    // if (feedList.length < 6 && feed_testing == 0) {
+    //     console.log("Error: Not enough content found.");
+    //     return [];
+    // }
 
+    // console.log("feed list, ", feedList);
+
+    feedList = ['emojiGrid12', 'textSpotlight13', 'crimsonRoom4', 'threeChambers16', 'crimsonRoom17', 'textPop13', 'tunnel14', 'textSwipe22', 'reactorChamber13', 'vaporwave24', 'crimsonRoom4', 'threeGrids24'];
     return feedList;
 }
 
@@ -336,7 +339,7 @@ function getAssumption(topTrait){
  */
 function getContentSketchName(id){
 
-var sketches = ['experiment1'];
+var sketches = ['screen8', 'screen8', 'screen8', 'screen8'];
 
 // var sketches = ['experiment1']
 

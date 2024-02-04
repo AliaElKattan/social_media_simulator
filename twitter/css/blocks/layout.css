@@ -9,3 +9,17 @@
   position: fixed;
   width: 350px;
 }
+
+@media screen and (max-width: 549px) {
+  .layout {
+   display: flex;
+  }
+
+  .layout__left-sidebar {
+    display: none;
+  }
+
+  .layout__right-sidebar {
+    display: none;
+  }
+}

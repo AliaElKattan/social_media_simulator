@@ -128,8 +128,8 @@ async function initialize(){
         recSys.createNewUser(interestDict);
         setPreferences(menu);
         toggleInfoMenu(false);
-        var contentIdList = recSys.initializeFeed();
-        console.log("this is the id list", contentIdList)
+        // var contentIdList = recSys.initializeFeed();
+        // console.log("this is the id list", contentIdList)
         loadContent(initialPostLoad, contentIdList);
         setContentDraw();
         document.getElementById("debug-content").innerHTML = "ID: " + posts[0].id;
@@ -211,7 +211,8 @@ function onIntroButtonClicked(){
     introIndex++;
 
     // Check if we need to wait
-    if (introIndex == 2){
+    if (introIndex == 1){
+        console.log("intro index", introIndex);
         recSys.createNewUser(interestDict);
         console.log("entered")
         setPreferences(menu);
@@ -223,14 +224,20 @@ function onIntroButtonClicked(){
     }
 
     setContentDraw();
-    if (introIndex >= introPages.length){
-        setTimeout(() => {
-            document.getElementById("debug-content").innerHTML = "ID: " + posts[0].id;
+
+    document.getElementById("debug-content").innerHTML = "ID: " + posts[0].id;
             document.getElementById("debug-post-count").innerHTML = "Post " + currentPost;
             document.getElementById("intro").style.display = "none";
             inIntro = false;
-        }, 100);
-    };
+
+    // if (introIndex >= introPages.length){
+    //     setTimeout(() => {
+    //         document.getElementById("debug-content").innerHTML = "ID: " + posts[0].id;
+    //         document.getElementById("debug-post-count").innerHTML = "Post " + currentPost;
+    //         document.getElementById("intro").style.display = "none";
+    //         inIntro = false;
+    //     }, 100);
+    // };
 }
 
 /**
@@ -276,7 +283,7 @@ function loadContent(amount, idList){
         console.warn("idList does not have enough elements for the required amount.");
         return;
     }
-    console.log("this is the id list 2", idList)
+    // console.log("this is the id list 2", idList)
     for (var i = 0; i < amount; i++){
         var isMessagePost = messageAtIndex(totalPosts + i);
 
@@ -314,7 +321,7 @@ function createContentPost(index, contentId){
     var name = recSys.getContentSketchName(index);
 
     var contentTemplate = new p5(eval(name), post);
-    setupContentAttributes(contentTemplate, contentId);
+    // setupContentAttributes(contentTemplate, contentId);
 
     contentTemplate.id = "content-" + index;
 
@@ -542,7 +549,7 @@ function tryNextPost(){
         if (currentPost + 1 >= totalPosts && totalPosts < maxPosts){
             var numPosts = Math.min(5, maxPosts - totalPosts);
             var nextContentIds = recSys.recommend(numPosts);
-            console.log('Recommended IDs:', nextContentIds);
+            // console.log('Recommended IDs:', nextContentIds);
             loadContent(numPosts, nextContentIds);
         }
 
@@ -763,7 +770,7 @@ function setMyAlgorithm(div){
 
 function setAssumptions(div){
     var topColor = recSys.getTopTrait("colors");
-    console.log("this is the top color,", topColor);
+    // console.log("this is the top color,", topColor);
     var topShape = recSys.getTopTrait("shapes");
     var topSpeed = recSys.getTopTrait("speeds");
     div.getElementsByClassName("assumption-color")[0].innerHTML = topColor;

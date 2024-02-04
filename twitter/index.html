@@ -1,336 +1,656 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Twitter markup</title>
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/blocks/layout.css" />
-    <link rel="stylesheet" href="css/blocks/brand.css" />
-    <link rel="stylesheet" href="css/blocks/sidebar-menu.css" />
-    <link rel="stylesheet" href="css/blocks/tweet.css" />
-    <link rel="stylesheet" href="css/blocks/trends-for-you.css" />
-    <link rel="stylesheet" href="css/blocks/who-to-follow.css" />
-  </head>
-  <body>
-    <div class="layout">
-      <div class="layout__left-sidebar">
-        <!-- <img src="./svg/twitter.svg" class="brand" /> -->
-        <div class="sidebar-menu">
-          <div class="sidebar-menu__item sidebar-menu__item--active">
-            <img src="./svg/home.svg" class="sidebar-menu__item-icon" />
-            Home
-          </div>
-          <div class="sidebar-menu__item">
-            <img src="./svg/explore.svg" class="sidebar-menu__item-icon" />
-            Explore
-          </div>
+<head>
+  <title>Twitter markup</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/blocks/layout.css" />
+  <link rel="stylesheet" href="css/blocks/brand.css" />
+  <link rel="stylesheet" href="css/blocks/sidebar-menu.css" />
+  <link rel="stylesheet" href="css/blocks/tweet.css" />
+  <link rel="stylesheet" href="css/blocks/trends-for-you.css" />
+  <link rel="stylesheet" href="css/blocks/who-to-follow.css" />
 
-          <div class="sidebar-menu__item">
-            <img
-              src="./svg/notifications.svg"
-              class="sidebar-menu__item-icon"
-            />
-            Notifications
-          </div>
 
-          <div class="sidebar-menu__item">
-            <img src="./svg/messages.svg" class="sidebar-menu__item-icon" />
-            Messages
-          </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="main.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-          <div class="sidebar-menu__item">
-            <img src="./svg/profile.svg" class="sidebar-menu__item-icon" />
-            Profile
-          </div>
+</head>
+<body>
 
-          <div class="sidebar-menu__item">
-            <img src="./svg/more.svg" class="sidebar-menu__item-icon" />
-            More
-          </div>
-        </div>
+
+<!-- 
+<div class="my-div">1</div>
+<div class="my-div">2</div>
+<div class="my-div">3</div>
+<div class="my-div">4</div>
+<div class="my-div">5</div> -->
+
+<div class="layout">
+  <div class="layout__left-sidebar">
+    <!-- <img src="./svg/twitter.svg" class="brand" /> -->
+    <div class="sidebar-menu">
+      <div class="sidebar-menu__item sidebar-menu__item--active">
+        <img src="./svg/home.svg" class="sidebar-menu__item-icon" />
+        Home
       </div>
-      <div class="layout__main">
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/wp-image.jpeg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Washington Post
-              </div>
-              <div class="tweet__author-slug">
-                @washpost
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Analysis by Ben Golliver: Will the good times last for Luka Doncic, Kyrie Irving and the Mavericks? 
+      <div class="sidebar-menu__item">
+        <img src="./svg/explore.svg" class="sidebar-menu__item-icon" />
+        Explore
+      </div>
 
-The Mavericks are off to a strong start thanks to a supercharged offense, but concerns about defense and depth linger.
-            </div>
+      <div class="sidebar-menu__item">
+        <img
+        src="./svg/notifications.svg"
+        class="sidebar-menu__item-icon"
+        />
+        Notifications
+      </div>
+
+      <div class="sidebar-menu__item">
+        <img src="./svg/messages.svg" class="sidebar-menu__item-icon" />
+        Messages
+      </div>
+
+      <div class="sidebar-menu__item">
+        <img src="./svg/profile.svg" class="sidebar-menu__item-icon" />
+        Profile
+      </div>
+
+      <div class="sidebar-menu__item">
+        <img src="./svg/more.svg" class="sidebar-menu__item-icon" />
+        More
+      </div>
+    </div>
+  </div>
+
+  <div class='tweets'>
+    <div class="tweet">
+
+      <img class="tweet__author-logo" src="./images/usatoday-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            USA Today
+          </div>
+          <div class="tweet__author-slug">
+            @usatoday
+          </div>
+          <div class="tweet__publish-time">
+            38m
           </div>
         </div>
-
-                        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/usatoday-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                USA Today
-              </div>
-              <div class="tweet__author-slug">
-                @usatoday
-              </div>
-              <div class="tweet__publish-time">
-                10m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Voters don't want a Trump-Biden rematch in 2024. So how come they are still the frontrunners?
-            </div>
-          </div>
+        <div class="tweet__content">
+          Tens of thousands of rape victims became pregnant in states with abortion bans, study estimates.
         </div>
+        <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
 
-
-
-                <div class="tweet">
-          <img class="tweet__author-logo" src="./images/nbc-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                NBC News
-              </div>
-              <div class="tweet__author-slug">
-                @nbcnews
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Florida man charged with murder in fatal mall shooting packed with last-minute Christmas shoppers
-Turn on screen reader support
-To enable screen reader support, press ⌘+Option+Z To learn about keyboard shortcuts, press ⌘slash
-            </div>
-          </div>
-        </div>
-
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/wp-image.jpeg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Washington Post
-              </div>
-              <div class="tweet__author-slug">
-                @washingtonpost
-              </div>
-              <div class="tweet__publish-time">
-                10d
-              </div>
-            </div>
-            <div class="tweet__content">
-              Analysis by Shira Ovide: Despite warnings about the new iPhone feature NameDrop, the technology is quite safe. The fear mongering about the new feature is not.
-
-Here's how it works.
-            </div>
-          </div>
-        </div>
-
-
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/abc-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                ABC News
-              </div>
-              <div class="tweet__author-slug">
-                @abcnews
-              </div>
-              <div class="tweet__publish-time">
-                2hr
-              </div>
-            </div>
-            <div class="tweet__content">
-              Donald Trump defies orders to not give his own closing remarks, accusing the judge of not listening to him before saying those who brought the fraud case against him should "pay me".
-            </div>
-          </div>
-        </div>
-
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/usatoday-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                USA Today
-              </div>
-              <div class="tweet__author-slug">
-                @usatoday
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Barack Obama fears close 2024 race with Trump, tries to 'move the needle' for Biden, closest confidants say
-            </div>
-          </div>
-        </div>
-
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/abc-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                ABC News
-              </div>
-              <div class="tweet__author-slug">
-                @abcnews
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              The IRS is still too slow to process amended tax returns, answer taxpayer phone calls and resolve identity theft cases, according to an independent watchdog within the agency.
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="tweet">
-          <img class="tweet__author-logo" src="./images/wp-image.jpeg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Washington Post
-              </div>
-              <div class="tweet__author-slug">
-                @washingtonpost
-              </div>
-              <div class="tweet__publish-time">
-                15h
-              </div>
-            </div>
-            <div class="tweet__content">
-              After a shooting that unfolded Saturday as three longtime friends visited Burlington, Vt. for Thanksgiving, the Palestinian victims, all 20-years-old, remain in intensive care. The county’s state attorney said “there is no question this was a hateful act.” 
-              <!-- <img class="tweet__image" src="./images/wp-image.jpeg" /> -->
-            </div>
-          </div>
-        </div>
-
-
-
-                <div class="tweet">
-          <img class="tweet__author-logo" src="./images/nbc-image.png" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-               NBC News
-              </div>
-              <div class="tweet__author-slug">
-                @nbcnews
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              
-            </div>
-          </div>
-        </div>
-
-                <div class="tweet">
-          <img class="tweet__author-logo" src="./images/wp-image.jpeg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Washington Post
-              </div>
-              <div class="tweet__author-slug">
-                @washingtonpost
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Sample Headline
-            </div>
-          </div>
-        </div>
-
-                <div class="tweet">
-          <img class="tweet__author-logo" src="./images/wp-image.jpeg" />
-          <div class="tweet__main">
-            <div class="tweet__header">
-              <div class="tweet__author-name">
-                Washington Post
-              </div>
-              <div class="tweet__author-slug">
-                @washingtonpost
-              </div>
-              <div class="tweet__publish-time">
-                38m
-              </div>
-            </div>
-            <div class="tweet__content">
-              Sample Headline
-            </div>
-          </div>
-        </div>
-
-              <p> Thank you for browsing through this feed! You can complete the post-survey <a href="https://nyu.qualtrics.com/jfe/form/SV_23Nw3CHsVK7zwNw">here</a>. Once you have started the survey, please do not return to this page. Your compensation will <b>not</b> be dependent on correctness of answers.</a> </p>
-                      
 
       </div>
-      <div class="layout__right-sidebar-container">
-        <div class="layout__right-sidebar">
-          <div class="trends-for-you">
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__heading">
-                Trends for you
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in USA
-              </div>
-              <div class="trends-for-you__trend-name">
-                #Trump
-              </div>
-              <div class="trends-for-you__meta-information">
-                155k Tweets
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending in USA
-              </div>
-              <div class="trends-for-you__trend-name">
-                #TaylorSwift
-              </div>
-            </div>
-            <div class="trends-for-you__block">
-              <div class="trends-for-you__meta-information">
-                Trending - Trending
-              </div>
-              <div class="trends-for-you__trend-name">
-                #goldenglobes
-              </div>
-              <div class="trends-for-you__meta-information">
-                2,800 Tweets
-              </div>
+    </div>
+
+    <div class="tweet">
+      <img class="tweet__author-logo" src="./images/usatoday-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            USA Today
+          </div>
+          <div class="tweet__author-slug">
+            @usatoday
+          </div>
+          <div class="tweet__publish-time">
+            10m
+          </div>
+        </div>
+        <div class="tweet__content">
+          Dry, sunny San Diego was hit with damaging floods. What's going on? Is it climate change?
+        </div>
+        <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+
+      </div>
+    </div>
 
 
-            </div>
 
-              
+    <div class="tweet">
+      <img class="tweet__author-logo" src="./images/abc-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            ABC News
+          </div>
+          <div class="tweet__author-slug">
+            @abcnews
+          </div>
+          <div class="tweet__publish-time">
 
           </div>
+        </div>
+        <div class="tweet__content">
+          Schools are now the third-highest location for hate crimes in the United States, with as much as 10% of all reported hate crimes in 2022 happening at schools across the country, according to a new report from the FBI.
+        </div>
+        <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+      </div>
+    </div>
+
+    <div class="tweet">
+      <img class="tweet__author-logo" src="./images/abc-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            ABC News
+          </div>
+          <div class="tweet__author-slug">
+            @abcnews
+          </div>
+          <div class="tweet__publish-time">
+
+          </div>
+        </div>
+        <div class="tweet__content">
+          When a former college professor opened fire at the University of Nevada, Las Vegas, last month, he had with him two laminated cards with details about his targets, according to a law enforcement investigative synopsis obtained by ABC News,
+        </div>
+        <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+      </div>
+    </div>
+
+
+    <div class="tweet">
+      <img class="tweet__author-logo" src="./images/nbc-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            NBC News
+          </div>
+          <div class="tweet__author-slug">
+            @nbcnews
+          </div>
+          <div class="tweet__publish-time">
+
+          </div>
+        </div>
+        <div class="tweet__content">
+          More Americans are accepting the reality that the Earth is getting warmer, but they’re still very much split on why and what to do about it, according to researchers.
+        </div>
+        <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+      </div>
+    </div>
+
+    <div class="tweet">
+      <img class="tweet__author-logo" src="./images/nbc-image.png" />
+      <div class="tweet__main">
+        <div class="tweet__header">
+          <div class="tweet__author-name">
+            NBC News
+          </div>
+          <div class="tweet__author-slug">
+            @nbcnews
+          </div>
+          <div class="tweet__publish-time">
+
+          </div>
+        </div>
+        <div class="tweet__content">
+         Nearly 40,000 migrants have arrived in Denver over the past year and the city is becoming overwhelmed.
+         Starting Feb. 5, Denver will limit the number of days migrants can stay in shelters and send those who exceed their stay out onto the streets.
+       </div>
+       <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+     </div>
+   </div>
+
+   <div class="tweet">
+    <img class="tweet__author-logo" src="./images/reuters-image.jpeg" />
+    <div class="tweet__main">
+      <div class="tweet__header">
+        <div class="tweet__author-name">
+          Reuters
+        </div>
+        <div class="tweet__author-slug">
+          @reuters
+        </div>
+        <div class="tweet__publish-time">
+
+        </div>
+      </div>
+      <div class="tweet__content">
+       A 2023 judicial decision that would curb access to the abortion pill threatens to disrupt the authority of the FDA and harm the American healthcare system, President Biden's administration told the Supreme Court, urging the justices to reverse the ruling
+     </div>
+     <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+   </div>
+ </div>
+
+
+
+ <div class="tweet">
+  <img class="tweet__author-logo" src="./images/reuters-image.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Reuters
+      </div>
+      <div class="tweet__author-slug">
+        @reuters
+      </div>
+      <div class="tweet__publish-time">
+
+      </div>
+    </div>
+    <div class="tweet__content">
+      Climate change is the main culprit for a record drought in the Amazon rainforest that has drained rivers, killed endangered dolphins and upended life for millions of people in the region, according to a study released
+      <!-- <img class="tweet__image" src="./images/wp-image.jpeg" /> -->
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/ap-image.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+       The Associated Press
+     </div>
+     <div class="tweet__author-slug">
+      @AP
+    </div>
+    <div class="tweet__publish-time">
+
+    </div>
+  </div>
+  <div class="tweet__content">
+    BREAKING: A North Dakota judge won’t block a law that doctors say puts them at risk of prosecution if they perform an abortion to save a patient’s life or health.
+  </div>
+  <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+</div>
+</div>
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/bloomberg-image.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Bloomberg
+      </div>
+      <div class="tweet__author-slug">
+        @bloomberg
+      </div>
+      <div class="tweet__publish-time">
+
+      </div>
+    </div>
+    <div class="tweet__content">
+      A key Republican senator defended an emerging border security deal as a step toward potentially halting illegal immigration
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/bloomberg-image.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Bloomberg
+      </div>
+      <div class="tweet__author-slug">
+        @bloomberg
+      </div>
+      <div class="tweet__publish-time">
+
+      </div>
+    </div>
+    <div class="tweet__content">
+      Texas Governor Greg Abbott vowed to add more razor wire along the border with Mexico to crack down on illegal immigration
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/popbase.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Pop Base
+      </div>
+      <div class="tweet__author-slug">
+        @popbase
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+     SZA reveals a collaboration with Paramore is in the works.
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/popbase.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Pop Base
+      </div>
+      <div class="tweet__author-slug">
+        @popbase
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+     The live-action ‘Avatar: Last Airbender’ series on Netflix removed how sexist Sokka was in the original show:
+“We took out the element of how sexist [Sokka] was... there were a lot of moments in the original show that were iffy.”
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/popbase.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Pop Base
+      </div>
+      <div class="tweet__author-slug">
+        @popbase
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+     Taylor Swift has generated an equivalent brand value of $331.5 million for the NFL and the Chiefs, FOS reports.
+This includes print, digital, radio, TV, highlights, and social media since the first game she attended in September.
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/nba-image.png" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        NBA
+      </div>
+      <div class="tweet__author-slug">
+        @nba
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+     STEPHEN vs. SABRINA <br><br>
+
+Stephen Curry and Sabrina Ionescu will go head-to-head in the first NBA vs. WNBA 3-point challenge during # StateFarmSaturday on TNT at #NBAAllStar 2024!
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/bleacher.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Bleacher Report
+      </div>
+      <div class="tweet__author-slug">
+        @BleacherReport
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+    Mahomes is only ONE WIN AWAY from passing Peyton Manning's playoffs wins record...<br><br>
+
+He has played TEN FEWER playoff games than Manning
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/bleacher.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Bleacher Report
+      </div>
+      <div class="tweet__author-slug">
+        @BleacherReport
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+    Suns last 6 Games <br><br>
+
+Jan. 19: DBook scores 52<br>
+Jan. 21: KD scores 40<br>
+Jan. 22: KD scores 43<br>
+Jan. 24: DBook scores 46<br>
+Jan. 26: DBook scores 63<br>
+Jan. 28: DBook scores 44
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/nfl.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        NFL
+      </div>
+      <div class="tweet__author-slug">
+        @NFL
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+    If it's the AFC Championship, you know @tkelce will step up with a big-time performance:<br><br>
+
+- 11 receptions<br>
+- 116 yards<br>
+- 1 TD<br>
+    </div>
+    <div class="interactions">
+         <img class="comment-logo" src="./images/comment.svg" />
+         <img class="rt-logo" src="./images/rt.png" />
+         <img class="heart-logo" src="./images/heart.png" />
+       </div>
+  </div>
+</div>
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/popcrave.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Pop Crave
+      </div>
+      <div class="tweet__author-slug">
+        @popcrave
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+    Elon Musk reveals the first human patient has received a brain implant from his startup, Neuralink, which aims to let people control computers with thoughts.
+    </div>
+
+  </div>
+</div>
+
+
+<div class="tweet">
+  <img class="tweet__author-logo" src="./images/nyu-image.jpeg" />
+  <div class="tweet__main">
+    <div class="tweet__header">
+      <div class="tweet__author-name">
+        Researcher
+      </div>
+      <div class="tweet__author-slug">
+        @researcher
+      </div>
+      <div class="tweet__publish-time">
+        
+      </div>
+    </div>
+    <div class="tweet__content">
+    This is an attention check. Write down the code <b>RBT201</b> and enter it in the attention question in the upcoming final survey.
+    </div>
+    
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+<div style="margin-left: 20%; margin-right: 20%; margin-top: 5%; margin-bottom: 5%;">
+  <p> Thank you for browsing through this feed! You can complete the post-survey <a href="https://nyu.qualtrics.com/jfe/form/SV_23Nw3CHsVK7zwNw">here</a>. Once you have started the survey, please do not return to this page. Your compensation will <b>not</b> be dependent on correctness of answers, only on completion and passing the attention check.</a> </p>  </div>
+
+
+  <div class="layout__right-sidebar-container">
+    <div class="layout__right-sidebar">
+      <div class="trends-for-you">
+        <div class="trends-for-you__block">
+          <div class="trends-for-you__heading">
+            Trends for you
+          </div>
+        </div>
+        <div class="trends-for-you__block">
+          <div class="trends-for-you__meta-information">
+            Trending in USA
+          </div>
+          <div class="trends-for-you__trend-name">
+            #Trump
+          </div>
+          <div class="trends-for-you__meta-information">
+            155k Tweets
+          </div>
+        </div>
+        <div class="trends-for-you__block">
+          <div class="trends-for-you__meta-information">
+            Trending in USA
+          </div>
+          <div class="trends-for-you__trend-name">
+            #TaylorSwift
+          </div>
+        </div>
+        <div class="trends-for-you__block">
+          <div class="trends-for-you__meta-information">
+            Trending - Trending
+          </div>
+          <div class="trends-for-you__trend-name">
+            #goldenglobes
+          </div>
+          <div class="trends-for-you__meta-information">
+            2,800 Tweets
+          </div>
+
+
+        </div>
+
+
+
+      </div>
 
 
 
@@ -407,4 +727,4 @@ Here's how it works.
       </div>
     </div>
   </body>
-</html>
+  </html>

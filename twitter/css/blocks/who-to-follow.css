@@ -24,11 +24,11 @@
 
 .who-to-follow__author-slug {
   color: #657786;
-  font-size: 15px;
+  font-size: 4rem;
 }
 
 .who-to-follow__author-name {
-  font-size: 15px;
+  font-size: 4rem;
   font-weight: 700;
 }
 
@@ -47,7 +47,7 @@
 .who-to-follow__button {
   border: 1px solid #1da0f2;
   color: #1da0f2;
-  font-size: 15px;
+  font-size: 4rem;
   font-weight: 700;
   border-radius: 15px;
   padding: 5px;
