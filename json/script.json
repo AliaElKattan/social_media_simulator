@@ -3,7 +3,7 @@
         {
             "index": "21",
             "title": "Thank you!",
-            "body": "You can complete the post-survey <a href='https://nyu.qualtrics.com/jfe/form/SV_23Nw3CHsVK7zwNw'>here</a>. Once you start the survey, please do not return to this page. Your compensation will <b>not</b> be dependent on correctness of answers, only on completion and passing the attention check.",
+            "body": "You can complete the post-survey <a href='https://nyu.qualtrics.com/jfe/form/SV_23Nw3CHsVK7zwNw'>here</a>. Once you start the survey, please do not return to this page. <br><br>Your compensation will <b>not</b> be dependent on correctness of answers, only on completion and passing the attention check.",
             "buttons": ["Okay"],
             "buttonTriggers":  ["continue"]
         }
