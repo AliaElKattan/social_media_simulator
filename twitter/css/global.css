@@ -14,3 +14,25 @@ html {
       margin: 5px;
       display: inline-block;
     }
+
+#thankyou_twitter {
+    margin-left: 20%; 
+    margin-right: 20%; 
+    margin-top: 5%; 
+    margin-bottom: 5%;
+}
+
+#thankyou_twitter p {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 550px) {
+
+#thankyou_twitter {
+    margin-left: 5%; 
+    margin-right: 5%; 
+    margin-top: 5%; 
+    margin-bottom: 5%;
+    font-size: 1rem;
+}
+}
