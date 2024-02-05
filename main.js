@@ -25,7 +25,7 @@ var menuShowing = false;
 var deviceButtonsShowing = true;
 var barDragging = false;
 
-const initialPostLoad = 6;
+const initialPostLoad = 20;
 const pageSwipeTime = 400;
 const numPreferencesToShow = 4;
 const maxPosts = 28;
@@ -309,6 +309,9 @@ function loadContent(amount, idList){
 }
 
 
+// var all_headlines = "This is a sample headline";
+
+
 function createContentPost(index, contentId){
     var post = document.createElement("div");
     post.id = "post-" + index;
@@ -321,6 +324,7 @@ function createContentPost(index, contentId){
     var name = recSys.getContentSketchName(index);
 
     var contentTemplate = new p5(eval(name), post);
+
     // setupContentAttributes(contentTemplate, contentId);
 
     contentTemplate.id = "content-" + index;
@@ -428,7 +432,7 @@ function dragStart(e){
     e.dataTransfer.setDragImage(img, 0, 0);
 
     e.dataTransfer.clearData();
-    e.dataTransfer.setData('text/plain', 'anything');
+    e.dataTransfer.setData('text/plain', '');
 }
 
 function drag(e) {
@@ -548,6 +552,7 @@ function tryNextPost(){
         // See if we need to load more posts
         if (currentPost + 1 >= totalPosts && totalPosts < maxPosts){
             var numPosts = Math.min(5, maxPosts - totalPosts);
+
             var nextContentIds = recSys.recommend(numPosts);
             // console.log('Recommended IDs:', nextContentIds);
             loadContent(numPosts, nextContentIds);

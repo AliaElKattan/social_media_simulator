@@ -1,18 +1,11 @@
 {
     "script": [
         {
-            "index": "20",
-            "title": "Good work",
-            "body": "We're adjusting our recommendations based on your interactions. Make sure you use the like, share, and bookmark buttons to give the algorithm a signal of what to prioritize.",
+            "index": "21",
+            "title": "Thank you!",
+            "body": "You can complete the post-survey <a href='https://nyu.qualtrics.com/jfe/form/SV_23Nw3CHsVK7zwNw'>here</a>. Once you start the survey, please do not return to this page. Your compensation will <b>not</b> be dependent on correctness of answers, only on completion and passing the attention check.",
             "buttons": ["Okay"],
             "buttonTriggers":  ["continue"]
-        },
-        {
-            "index": "21",
-            "dataId": "algorithm-image-template",
-            "body": "Here's your algorithm! Save and share it with others.",
-            "buttons": ["Share"],
-            "buttonTriggers": ["save-algorithm"]
         }
     ]
 }

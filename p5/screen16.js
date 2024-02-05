@@ -1,4 +1,4 @@
-const screen6 = ( sketch ) => {
+const screen16 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -9,9 +9,9 @@ const screen6 = ( sketch ) => {
 
     var x,y;
      let img;
-    let user = shuffled_headlines[5][0];
-let headline = shuffled_headlines[5][1];
-let imgPath = shuffled_headlines[5][2];
+    let user = shuffled_headlines[15][0];
+let headline = shuffled_headlines[15][1];
+let imgPath = shuffled_headlines[15][2];
 let shapes = [];
 
 
@@ -41,7 +41,7 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen6");
+        canvas.addClass("screen16");
 
 
     };
@@ -104,6 +104,7 @@ sketch.text(user, sketch.width * .08, sketch.height * .9);
 
 
 sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
+
 
 
     };

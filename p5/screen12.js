@@ -1,24 +1,20 @@
-
-
-const screen1 = ( sketch ) => {
+const screen12 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
     var bgColor;
     var color;
 
+    let inconsolata;
 
     var x,y;
+     let img;
+    let user = shuffled_headlines[11][0];
+let headline = shuffled_headlines[11][1];
+let imgPath = shuffled_headlines[11][2];
+let shapes = [];
 
-    let img;
-    let user = shuffled_headlines[0][0];
-    let headline = shuffled_headlines[0][1];
-    let imgPath = shuffled_headlines[0][2];
-
-
-    let shapes = [];
-
-    var sounds = ['../audio/sound1.m4a', 
+      var sounds = ['../audio/sound1.m4a', 
       '../audio/sound2.m4a',
       '../audio/sound3.m4a',
       '../audio/sound4.m4a',
@@ -30,7 +26,6 @@ const screen1 = ( sketch ) => {
       '../audio/sound10.m4a'
       ];
 
-    var soundPath;
 
     sketch.preload = () => {
         soundPath = sketch.random(sounds);
@@ -45,10 +40,11 @@ const screen1 = ( sketch ) => {
         var deviceScreen = document.getElementById("device-screen");
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
-        canvas.addClass("screen1");             
+
+        canvas.addClass("screen12");
         
 
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 10; i++) {
         shapes.push(new AnimatedShape());
   }
 
@@ -64,14 +60,13 @@ const screen1 = ( sketch ) => {
 
 sketch.textFont(font_reg);
   // Display headline
-
   sketch.textSize(20);
   sketch.textAlign(sketch.CENTER);
   sketch.fill(0);
-sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
+ sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
 
-sketch.textFont(font_bold);
+ sketch.textFont(font_bold);
 sketch.textSize(16);
 sketch.textAlign(sketch.LEFT);
 sketch.text(user, sketch.width * .08, sketch.height * .9);
@@ -79,13 +74,13 @@ sketch.text(user, sketch.width * .08, sketch.height * .9);
 
 sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
 
-
   // Update and display animated shapes
   for (let shape of shapes) {
     shape.update();
     shape.display();
   }
 
+        sketch.textFont(font_reg);
     };
 
     sketch.setColor = () => {
@@ -130,7 +125,7 @@ sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
   display() {
     sketch.noStroke();
     sketch.fill(this.color);
-    sketch.ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
+    sketch.square(this.x, this.y, this.radius * 2);
   }
 }
 

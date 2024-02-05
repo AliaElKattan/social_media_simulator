@@ -1,4 +1,4 @@
-const screen6 = ( sketch ) => {
+const screen18 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -9,9 +9,9 @@ const screen6 = ( sketch ) => {
 
     var x,y;
      let img;
-    let user = shuffled_headlines[5][0];
-let headline = shuffled_headlines[5][1];
-let imgPath = shuffled_headlines[5][2];
+    let user = shuffled_headlines[17][0];
+let headline = shuffled_headlines[17][1];
+let imgPath = shuffled_headlines[17][2];
 let shapes = [];
 
 
@@ -41,7 +41,7 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen6");
+        canvas.addClass("screen18");
 
 
     };
@@ -71,20 +71,33 @@ let shapes = [];
         let bg_off_y = Math.sin(time) * bg_spacing * 2;
 
         sketch.noStroke();
-        sketch.fill(180,180,220,50);
+        sketch.fill(220,180,180,50);
 
         let cols = 0;
         for(let x=-bg_spacing-bg_off_x; x<device.offsetWidth+bg_spacing; x+=bg_spacing){
             cols++;
             for(let y=-bg_spacing*2-bg_off_y; y<device.offsetHeight+bg_spacing*2; y+=bg_spacing){
 
+                if (sketch.userShape == "square"){
                     sketch.push();
                     sketch.translate(x,y);
                     sketch.rotate(x/30 + y/30)
                     let size = bg_spacing/2
-                    sketch.square(-size,-size, size*2);
+                    sketch.square(-size/2,-size/2, size);
                     sketch.pop();
-                
+                }
+                else if (sketch.userShape == "circle"){
+                    let size =  bg_spacing/2 + Math.sin(x/30 + y/30) * 2;
+                    sketch.circle(x,y, size);
+                }
+                else{
+                    let ts = bg_spacing*0.5;
+                    sketch.push();
+                    sketch.translate(x,y);
+                    sketch.rotate(x/30 + y/30)
+                    sketch.triangle(ts/2,ts/2, -ts/2,ts/2, 0,-ts/2 );
+                    sketch.pop();
+                }
 
             }
         }
@@ -94,7 +107,7 @@ let shapes = [];
     sketch.textSize(20);
     sketch.textAlign(sketch.CENTER);
 sketch.textFont(font_reg);
-    sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
+sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
 
 sketch.textFont(font_bold);

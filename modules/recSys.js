@@ -17,6 +17,7 @@ var assumptions;
 var totalInitialMatching;
 var lastRecommendedSketch = null;
 
+
 const feed_testing = 1;
 // Start exports section
 
@@ -120,7 +121,12 @@ function initializeFeed(){
 
     // console.log("feed list, ", feedList);
 
-    feedList = ['emojiGrid12', 'textSpotlight13', 'crimsonRoom4', 'threeChambers16', 'crimsonRoom17', 'textPop13', 'tunnel14', 'textSwipe22', 'reactorChamber13', 'vaporwave24', 'crimsonRoom4', 'threeGrids24'];
+    // feedList = ['emojiGrid12', 'textSpotlight13', 'crimsonRoom4', 'threeChambers16', 'crimsonRoom17', 'textPop13', 'tunnel14', 'textSwipe22', 'reactorChamber13', 'vaporwave24', 'crimsonRoom4', 'threeGrids24'];
+    
+
+    var feedList = ['screen1', 'screen2', 'screen3', 'screen4', 'screen5','screen6','screen7','screen8','screen9', 'screen10', 
+    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20'];
+
     return feedList;
 }
 
@@ -334,19 +340,44 @@ function getAssumption(topTrait){
     return assumptions[topTrait];
 }
 
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex > 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+
+
 /**
  * Gets the name of the sketch associated with the given content id
  */
+
+var sketches = ['screen1', 'screen2', 'screen3', 'screen4', 'screen5','screen6','screen7','screen8','screen9', 'screen10', 
+    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20'];
+
+// var sketches_shuffle = shuffle(sketches);
+
 function getContentSketchName(id){
 
-var sketches = ['screen8', 'screen8', 'screen8', 'screen8'];
+// var sketches = ['screen1', 'screen1', 'screen1', 'screen1', 'screen1','screen1','screen1','screen1','screen1', 'screen1'];
 
-// var sketches = ['experiment1']
 
 if (id < sketches.length)
 return sketches[id];
 
-else return sketches[0]
+else return sketches[0];
 
 // sketchName: sketch.id
 

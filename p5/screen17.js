@@ -1,4 +1,4 @@
-const screen7 = ( sketch ) => {
+const screen17 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -11,9 +11,9 @@ const screen7 = ( sketch ) => {
 
     let bgColor, color;
      let img;
-    let user = shuffled_headlines[6][0];
-let headline = shuffled_headlines[6][1];
-let imgPath = shuffled_headlines[6][2];
+    let user = shuffled_headlines[16][0];
+let headline = shuffled_headlines[16][1];
+let imgPath = shuffled_headlines[16][2];
 let shapes = [];
 
     var sounds = ['../audio/sound1.m4a', 
@@ -44,7 +44,7 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen7");
+        canvas.addClass("screen17");
         
         bgColor = sketch.color(sketch.random(220,255), sketch.random(220,255), sketch.random(220,255));
         color = sketch.color(sketch.random(200,255), sketch.random(200,255), sketch.random(200,255));
@@ -87,12 +87,12 @@ let shapes = [];
 
         // sketch.text("fps "+sketch.frameRate(), w-150, device.offsetHeight-40);
 
-                              sketch.textSize(20);
-  sketch.textAlign(sketch.CENTER);
 sketch.textFont(font_reg);
-  sketch.fill(0);
-sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
+sketch.textSize(20);
+sketch.textAlign(sketch.CENTER);
 
+sketch.fill(0);
+sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
 sketch.textFont(font_bold);
 sketch.textSize(16);

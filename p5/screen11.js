@@ -1,21 +1,19 @@
 
 
-const screen1 = ( sketch ) => {
+const screen11 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
     var bgColor;
     var color;
 
+    let inconsolata;
 
     var x,y;
-
-    let img;
-    let user = shuffled_headlines[0][0];
-    let headline = shuffled_headlines[0][1];
-    let imgPath = shuffled_headlines[0][2];
-
-
+     let img;
+    let user = shuffled_headlines[10][0];
+    let headline = shuffled_headlines[10][1];
+    let imgPath = shuffled_headlines[10][2];
     let shapes = [];
 
     var sounds = ['../audio/sound1.m4a', 
@@ -33,7 +31,9 @@ const screen1 = ( sketch ) => {
     var soundPath;
 
     sketch.preload = () => {
+        // console.log("ENTERED PRELOAD 1");
         soundPath = sketch.random(sounds);
+        // console.log("1", soundPath);
         font_reg = sketch.loadFont('uncut-sans/Uncut-Sans-Regular.otf');
         font_bold = sketch.loadFont('uncut-sans/Uncut-Sans-Bold.otf');
         img = sketch.loadImage(imgPath);
@@ -45,7 +45,7 @@ const screen1 = ( sketch ) => {
         var deviceScreen = document.getElementById("device-screen");
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
-        canvas.addClass("screen1");             
+        canvas.addClass("screen11");             
         
 
         for (let i = 0; i < 15; i++) {
@@ -64,7 +64,6 @@ const screen1 = ( sketch ) => {
 
 sketch.textFont(font_reg);
   // Display headline
-
   sketch.textSize(20);
   sketch.textAlign(sketch.CENTER);
   sketch.fill(0);
@@ -78,7 +77,6 @@ sketch.text(user, sketch.width * .08, sketch.height * .9);
 
 
 sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
-
 
   // Update and display animated shapes
   for (let shape of shapes) {

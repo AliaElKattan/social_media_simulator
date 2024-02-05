@@ -1,4 +1,4 @@
-const screen6 = ( sketch ) => {
+const screen20 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -7,11 +7,11 @@ const screen6 = ( sketch ) => {
 
     let inconsolata;
 
-    var x,y;
+    var x,y, c;
      let img;
-    let user = shuffled_headlines[5][0];
-let headline = shuffled_headlines[5][1];
-let imgPath = shuffled_headlines[5][2];
+    let user = shuffled_headlines[19][0];
+let headline = shuffled_headlines[19][1];
+let imgPath = shuffled_headlines[19][2];
 let shapes = [];
 
 
@@ -41,60 +41,63 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen6");
+        canvas.addClass("screen20");
 
+        c = sketch.color(sketch.random(220,255),sketch.random(220,255),sketch.random(220,255),255);
+        c2 = sketch.color(sketch.random(240,255),sketch.random(240,255),sketch.random(240,255),255);
 
     };
-
-
     sketch.draw = () => {
 
         sketch.background(255);
 
 
-        let time = sketch.millis() / 1000.0;
-        // time *= sketch.userSpeedF;
-        let delta_time = sketch.deltaTime / 1000.0;
-
-        // if(start ==0) {
-        //     // testSound.play();
-        //     // console.log("playing");
-        // }
-        // start=1;
+         let t = sketch.millis() / 1000;
 
 
-         //shape grid
-        let bg_spacing = device.offsetWidth * 0.1;
-        let bg_period = 2;
+        w = device.offsetWidth;
+        h = device.offsetHeight;
+        s = device.offsetWidth / 7;
+        // c = sketch.color(sketch.random(255),sketch.random(209),sketch.random(200),100)
 
-        let bg_off_x = bg_spacing * ( (time * bg_period) % 1);
-        let bg_off_y = Math.sin(time) * bg_spacing * 2;
+        
 
-        sketch.noStroke();
-        sketch.fill(180,180,220,50);
+        sketch.noStroke()
+        // sketch.background(102,99,91)
+        for(x=-s;x<w;x+=s){
+            for(y=-s;y<h;y+=s){
+                p=(t+(x+y)*.0025)%2-1;
+                o=(.5+p*.5)*s*.5;
+                // sketch.fill(p>0?s:c);
+                sketch.fill(c2);
+                sketch.rect(x+o,y+o,s,s);
+                sketch.fill(c);
+                // sketch.fill(p>0?c:-s);
 
-        let cols = 0;
-        for(let x=-bg_spacing-bg_off_x; x<device.offsetWidth+bg_spacing; x+=bg_spacing){
-            cols++;
-            for(let y=-bg_spacing*2-bg_off_y; y<device.offsetHeight+bg_spacing*2; y+=bg_spacing){
 
-                    sketch.push();
-                    sketch.translate(x,y);
-                    sketch.rotate(x/30 + y/30)
-                    let size = bg_spacing/2
-                    sketch.square(-size,-size, size*2);
-                    sketch.pop();
+                if (sketch.userShape == "square"){
+                    sketch.square(x+s/2,y+s/2,p*s*.9);
+                }
+                else if (sketch.userShape == "circle"){
+                    sketch.circle(x+s/2,y+s/2,p*s*.9);
+                }
+                else{
+                    let ts = p*s*.75;
+                    sketch.triangle(x-ts/2,y+ts/2, x+ts/2,y+ts/2, x+0,y-ts/2 );
+                }
+
                 
-
             }
         }
+        
+        
 
     sketch.fill(0);
 
     sketch.textSize(20);
     sketch.textAlign(sketch.CENTER);
 sketch.textFont(font_reg);
-    sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
+     sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
 
 sketch.textFont(font_bold);

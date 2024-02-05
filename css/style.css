@@ -7,6 +7,7 @@
   --main-red: #EE4813;
 }
 
+
 body {
     margin: 0px;
     width: 100vw;
@@ -220,18 +221,18 @@ body {
 #device-buttons{
     display: flex;
     flex-direction: column;
-    right: 5%;
-    top: 35%;
-    height: 30%;
+    right: 3%;
+    top: 40%;
+    height: 40%;
     position: absolute;
     transition: opacity 0.1s ease-in-out;
     z-index: 4;
 }
 
 .device-button{
-    height: 20%;
+    height: 9.5%;
     width: auto;
-    padding-bottom: 70%;
+    padding-bottom: 100%;
 }
 
 .device-button:hover {
@@ -573,18 +574,7 @@ margin-bottom: 1%;
     }
 }
 
-/* mobile */
-@media only screen and (max-width: 767px) {
-    #device-column{
-        width: 100vw;
-        height: 100dvh;
-        justify-content: center;
-    }
 
-    #device{
-        height: 97%;
-    }
-}
 
 @keyframes animateButtonClick {
     0% {
@@ -606,4 +596,106 @@ margin-bottom: 1%;
       transform: rotate(360deg);
     }
   }
+
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+    #device-column{
+        width: 100vw;
+        height: 100dvh;
+        justify-content: center;
+    }
+
+    #device{
+        height: 100%;
+        width: 100%;
+        border: 0px solid black;
+        border-radius: 0px;
+    }
+
+
+
+    .intro-title{
+        margin-top: 50%;
+    }
+
+    .welcome-title{
+        margin-top: 0%;
+    }
+
+    #top-intro-pararaph{
+        margin-top: 20%;
+    }
+
+    .titles{
+        font-size: 350%;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+    }
+
+    #title-div{
+        font-size: 240%;
+        padding-top: 15px;
+        text-shadow: 2px 2px 3px #282828;
+    }
+    
+    #info-body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10%;
+    }    
+
+    .info-content{
+        padding-top: 6vh;
+    }
+
+    #landing-body-div{
+        padding: 7%;
+    }
+
+    #landing-device{
+        filter: drop-shadow(0px 0px 10px #ffffff);
+        width: 80%;
+        height: auto;
+        aspect-ratio: 18 / 39;  /* Based off of iPhone device dimension, 19.5:9 */
+        border: 7px solid black;
+        border-radius: 45px;
+        margin: auto;
+    }
+
+    #get-started-title{
+        margin-top: 5vh;
+        margin-bottom: 1vh;
+    }
+
+    .subtitles{
+        flex-wrap: wrap;
+    }
+
+    #landing-device-section{
+        width: 100%;
+    }
+
+    #start-arrow{
+        display: none;
+    }
+
+    .alg-card {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin: 0 5% 2% 5%;
+    }
+
+    .interest-selection2{
+        padding: 1%;
+        width: 26%;
+    }
+
+    .alg-select-weightings{
+        font-size: 80%;
+    }
+}
 

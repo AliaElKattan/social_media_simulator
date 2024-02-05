@@ -1,4 +1,4 @@
-const screen6 = ( sketch ) => {
+const screen9 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -8,10 +8,10 @@ const screen6 = ( sketch ) => {
     let inconsolata;
 
     var x,y;
-     let img;
-    let user = shuffled_headlines[5][0];
-let headline = shuffled_headlines[5][1];
-let imgPath = shuffled_headlines[5][2];
+    let img;
+    let user = shuffled_headlines[8][0];
+let headline = shuffled_headlines[8][1];
+let imgPath = shuffled_headlines[8][2];
 let shapes = [];
 
 
@@ -41,7 +41,7 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen6");
+        canvas.addClass("screen9");
 
 
     };
@@ -71,20 +71,34 @@ let shapes = [];
         let bg_off_y = Math.sin(time) * bg_spacing * 2;
 
         sketch.noStroke();
-        sketch.fill(180,180,220,50);
+        sketch.fill(220,180,180,50);
 
         let cols = 0;
         for(let x=-bg_spacing-bg_off_x; x<device.offsetWidth+bg_spacing; x+=bg_spacing){
             cols++;
             for(let y=-bg_spacing*2-bg_off_y; y<device.offsetHeight+bg_spacing*2; y+=bg_spacing){
 
+                if (sketch.userShape == "square"){
                     sketch.push();
                     sketch.translate(x,y);
                     sketch.rotate(x/30 + y/30)
                     let size = bg_spacing/2
-                    sketch.square(-size,-size, size*2);
+                    sketch.square(-size/2,-size/2, size);
                     sketch.pop();
-                
+                }
+                else if (sketch.userShape == "circle"){
+                    let size =  bg_spacing/2 + Math.sin(x/30 + y/30) * 2;
+                    sketch.circle(x,y, size);
+                }
+                else{
+                    let ts = bg_spacing*0.5;
+                    sketch.push();
+                    sketch.translate(x,y);
+                    sketch.rotate(x/30 + y/30)
+                    // sketch.triangle(ts/2,ts/2, -ts/2,ts/2, 0,-ts/2 );
+                    sketch.square(ts, ts/2, 30);
+                    sketch.pop();
+                }
 
             }
         }
@@ -104,6 +118,7 @@ sketch.text(user, sketch.width * .08, sketch.height * .9);
 
 
 sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
+
 
 
     };

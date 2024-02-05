@@ -1,4 +1,4 @@
-const screen5 = ( sketch ) => {
+const screen21 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -11,22 +11,11 @@ const screen5 = ( sketch ) => {
 
     var r, g, b;
      let img;
-    let user = shuffled_headlines[4][0];
-let headline = shuffled_headlines[4][1];
-let imgPath = shuffled_headlines[4][2];
+    let user = shuffled_headlines[20][0];
+let headline = shuffled_headlines[20][1];
+let imgPath = shuffled_headlines[20][2];
 let shapes = [];
 
-    var sounds = ['../audio/sound1.m4a', 
-      '../audio/sound2.m4a',
-      '../audio/sound3.m4a',
-      '../audio/sound4.m4a',
-      '../audio/sound5.m4a',
-      '../audio/sound6.m4a',
-      '../audio/sound7.m4a',
-      '../audio/sound8.m4a',
-      '../audio/sound9.m4a',
-      '../audio/sound10.m4a'
-      ];
 
 
     sketch.preload = () => {
@@ -43,7 +32,7 @@ let shapes = [];
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen5");
+        canvas.addClass("screen21");
         
         r = sketch.random(100,255);
         g = sketch.random(100,255);

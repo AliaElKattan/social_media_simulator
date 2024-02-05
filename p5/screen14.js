@@ -1,4 +1,4 @@
-const screen6 = ( sketch ) => {
+const screen14 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
@@ -9,12 +9,12 @@ const screen6 = ( sketch ) => {
 
     var x,y;
      let img;
-    let user = shuffled_headlines[5][0];
-let headline = shuffled_headlines[5][1];
-let imgPath = shuffled_headlines[5][2];
+    let user = shuffled_headlines[13][0];
+let headline = shuffled_headlines[13][1];
+let imgPath = shuffled_headlines[13][2];
 let shapes = [];
 
-
+    
       var sounds = ['../audio/sound1.m4a', 
       '../audio/sound2.m4a',
       '../audio/sound3.m4a',
@@ -28,6 +28,8 @@ let shapes = [];
       ];
 
 
+
+
     sketch.preload = () => {
         soundPath = sketch.random(sounds);
         font_reg = sketch.loadFont('uncut-sans/Uncut-Sans-Regular.otf');
@@ -36,66 +38,40 @@ let shapes = [];
         // testSound = sketch.loadSound(soundPath);
     };
 
+
     sketch.setup = () => {
         var deviceScreen = document.getElementById("device-screen");
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
-        canvas.addClass("screen6");
+        canvas.addClass("screen14");
+        
 
+        for (let i = 0; i < 10; i++) {
+        shapes.push(new AnimatedShape());
+  }
 
     };
 
 
     sketch.draw = () => {
-
+        if(start ==0) {
+            // testSound.play();
+            // console.log("playing");
+        }
+        start=1;
         sketch.background(255);
 
-
-        let time = sketch.millis() / 1000.0;
-        // time *= sketch.userSpeedF;
-        let delta_time = sketch.deltaTime / 1000.0;
-
-        // if(start ==0) {
-        //     // testSound.play();
-        //     // console.log("playing");
-        // }
-        // start=1;
-
-
-         //shape grid
-        let bg_spacing = device.offsetWidth * 0.1;
-        let bg_period = 2;
-
-        let bg_off_x = bg_spacing * ( (time * bg_period) % 1);
-        let bg_off_y = Math.sin(time) * bg_spacing * 2;
-
-        sketch.noStroke();
-        sketch.fill(180,180,220,50);
-
-        let cols = 0;
-        for(let x=-bg_spacing-bg_off_x; x<device.offsetWidth+bg_spacing; x+=bg_spacing){
-            cols++;
-            for(let y=-bg_spacing*2-bg_off_y; y<device.offsetHeight+bg_spacing*2; y+=bg_spacing){
-
-                    sketch.push();
-                    sketch.translate(x,y);
-                    sketch.rotate(x/30 + y/30)
-                    let size = bg_spacing/2
-                    sketch.square(-size,-size, size*2);
-                    sketch.pop();
-                
-
-            }
-        }
-
-    sketch.fill(0);
+  // Update and display animated shapes
+  for (let shape of shapes) {
+    shape.update();
+    shape.display();
+  }
 
     sketch.textSize(20);
-    sketch.textAlign(sketch.CENTER);
-sketch.textFont(font_reg);
-    sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
-
+  sketch.textAlign(sketch.CENTER);
+  sketch.fill(0);
+sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
 sketch.textFont(font_bold);
 sketch.textSize(16);
@@ -108,6 +84,9 @@ sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
 
     };
 
+    sketch.setColor = () => {
+        
+    }
 
     sketch.setDraw = (shouldDraw) =>{
         if (shouldDraw && !sketch.isLooping()){
@@ -119,6 +98,41 @@ sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
             // testSound.stop();
         }
     }
+
+    class AnimatedShape {
+  constructor() {
+    this.x = sketch.random(sketch.width);
+    this.y = sketch.random(sketch.height);
+    this.radius = sketch.random(10, 30);
+    this.speedX = sketch.random(-2, 2);
+    this.speedY = sketch.random(-2, 2);
+    this.color = sketch.color(sketch.random(255), sketch.random(255), sketch.random(255), 150);
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    // Bounce off the canvas edges
+    if (this.x < sketch.width * -1|| this.x > sketch.width) {
+      this.speedX *= -1;
+    }
+
+    if (this.y < sketch.width * -1 || this.y > sketch.height) {
+      this.speedY *= -1;
+    }
+  }
+
+  display() {
+    sketch.noStroke();
+    sketch.fill(this.color);
+    sketch.square(this.x, this.y, this.radius * 20);
+    sketch.textFont(font_reg);
+  // Display headline
+
+  }
+}
+
 
 
   };

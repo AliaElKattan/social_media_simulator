@@ -8,9 +8,11 @@ const screen3 = ( sketch ) => {
     let inconsolata;
 
     var x,y;
-
-    let headline = "Tens of thousands of rape \n victims became pregnant in \n states with abortion bans, \n study estimates";
-let shapes = [];
+ let img;
+    let user = shuffled_headlines[2][0];
+       let headline = shuffled_headlines[2][1];
+       let imgPath = shuffled_headlines[2][2];
+       let shapes = [];
 
 
       var sounds = ['../audio/sound1.m4a', 
@@ -27,16 +29,16 @@ let shapes = [];
 
 
     sketch.preload = () => {
-        console.log("ENTERED PRELOAD 3");
         soundPath = sketch.random(sounds);
-        console.log("3", soundPath);
-        inconsolata = sketch.loadFont('inconsolata.otf');
-        testSound = sketch.loadSound(soundPath);
+        font_reg = sketch.loadFont('uncut-sans/Uncut-Sans-Regular.otf');
+        font_bold = sketch.loadFont('uncut-sans/Uncut-Sans-Bold.otf');
+        img = sketch.loadImage(imgPath);
+        // testSound = sketch.loadSound(soundPath);
     };
 
     sketch.setup = () => {
         var deviceScreen = document.getElementById("device-screen");
-        var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight, sketch.WEBGL);
+        var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
 
         canvas.addClass("screen3");
@@ -51,8 +53,8 @@ let shapes = [];
 
     sketch.draw = () => {
         if(start ==0) {
-            testSound.play();
-            console.log("playing");
+            // testSound.play();
+            // console.log("playing");
         }
         start=1;
         sketch.background(255);
@@ -63,11 +65,19 @@ let shapes = [];
     shape.display();
   }
 
-    sketch.textSize(24);
+    sketch.textSize(20);
   sketch.textAlign(sketch.CENTER);
   sketch.fill(0);
-  sketch.text(headline, sketch.width / 2 - 170, 120);
+sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
 
+
+sketch.textFont(font_bold);
+sketch.textSize(16);
+sketch.textAlign(sketch.LEFT);
+sketch.text(user, sketch.width * .08, sketch.height * .9);
+
+
+sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
 
     };
 
@@ -82,7 +92,7 @@ let shapes = [];
         }
         else if (!shouldDraw && sketch.isLooping()){
             sketch.noLoop();
-            testSound.stop();
+            // testSound.stop();
         }
     }
 
@@ -114,7 +124,7 @@ let shapes = [];
     sketch.noStroke();
     sketch.fill(this.color);
     sketch.ellipse(this.x, this.y, this.radius * 20, this.radius * 20);
-    sketch.textFont(inconsolata);
+    sketch.textFont(font_reg);
   // Display headline
 
   }
