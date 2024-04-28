@@ -1,22 +1,24 @@
-const screen21 = ( sketch ) => {
+
+
+const screen_blank6 = ( sketch ) => {
 
     var index = 0;
     var start = 0;
     var bgColor;
     var color;
 
-    let inconsolata;
 
     var x,y;
 
-    var r, g, b;
-     let img;
-    let user = shuffled_headlines[20][0];
-let headline = shuffled_headlines[20][1];
-let imgPath = shuffled_headlines[20][2];
-let shapes = [];
+    let img;
+    let user = shuffled_headlines[5][0];
+    let headline = shuffled_headlines[5][1];
+    let imgPath = shuffled_headlines[5][2];
 
 
+    let shapes = [];
+
+    var soundPath;
 
     sketch.preload = () => {
         // soundPath = sketch.random(sounds);
@@ -31,45 +33,23 @@ let shapes = [];
         var deviceScreen = document.getElementById("device-screen");
         var canvas = sketch.createCanvas(deviceScreen.offsetWidth, deviceScreen.offsetHeight);
         canvas.addClass("p5-content");
-
-        canvas.addClass("screen21");
+        canvas.addClass("screen1");             
         
-        r = sketch.random(100,255);
-        g = sketch.random(100,255);
-        b = sketch.random(100,255);
-
-
 
     };
 
 
     sketch.draw = () => {
-         sketch.textFont(font_reg);
-        
-        sketch.background(r,g,b);
-
-        if(r < 255) {
-            r= r++;
+        if(start ==0) {
+            // testSound.play();
         }
-        else if (r < 100) {r--};
-        if (g < 255) {
-            g++;
-        } else if (g < 100) {g--};
-
-        if(b < 255) {
-            b++;
-        } else if (g < 100) {g--};
-
-  
         start=1;
+        sketch.background(255);
 
-  // Update and display animated shapes
-  for (let shape of shapes) {
-    shape.update();
-    shape.display();
-  }
+sketch.textFont(font_reg);
+  // Display headline
 
-    sketch.textSize(20);
+  sketch.textSize(20);
   sketch.textAlign(sketch.CENTER);
   sketch.fill(0);
 sketch.text(headline, sketch.width / 2, sketch.height / 4 + (sketch.height * .15));
@@ -82,6 +62,13 @@ sketch.text(user, sketch.width * .08, sketch.height * .9);
 
 
 sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
+
+
+  // Update and display animated shapes
+  for (let shape of shapes) {
+    shape.update();
+    shape.display();
+  }
 
     };
 
@@ -99,6 +86,38 @@ sketch.image(img, sketch.width*.88, sketch.height*.32,35,35);
             // testSound.stop();
         }
     }
+
+    class AnimatedShape {
+  constructor() {
+    this.x = sketch.random(sketch.width);
+    this.y = sketch.random(sketch.height);
+    this.radius = sketch.random(10, 30);
+    this.speedX = sketch.random(-2, 2);
+    this.speedY = sketch.random(-2, 2);
+    this.color = sketch.color(sketch.random(255), sketch.random(255), sketch.random(255), 150);
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    // Bounce off the canvas edges
+    if (this.x < sketch.width * -1 || this.x > sketch.width) {
+      this.speedX *= -1;
+    }
+
+    if (this.y < sketch.width * -1 || this.y > sketch.height) {
+      this.speedY *= -1;
+    }
+  }
+
+  display() {
+    sketch.noStroke();
+    sketch.fill(this.color);
+    sketch.ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
+  }
+}
+
 
 
   };

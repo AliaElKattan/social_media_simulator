@@ -123,10 +123,19 @@ function initializeFeed(){
 
     // feedList = ['emojiGrid12', 'textSpotlight13', 'crimsonRoom4', 'threeChambers16', 'crimsonRoom17', 'textPop13', 'tunnel14', 'textSwipe22', 'reactorChamber13', 'vaporwave24', 'crimsonRoom4', 'threeGrids24'];
     
+     if(treatment == 2) {
+          var feedList = ['screen_blank1', 'screen_blank2', 'screen_blank3', 'screen_blank4', 'screen_blank5','screen_blank6', 'screen_blank7', 'screen_blank8', 'screen_blank9', 'screen_blank10','screen_blank11', 'screen_blank12', 'screen_blank13', 'screen_blank14', 'screen_blank15','screen_blank16', 'screen_blank17', 'screen_blank18', 'screen_blank19', 'screen_blank20','screen_blank21'];
 
-    var feedList = ['screen1', 'screen2', 'screen3', 'screen4', 'screen5','screen6','screen7','screen8','screen9', 'screen10', 
-    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20'];
+    }
 
+    if(treatment == 3) {
+            var feedList = ['screen1', 'screen2', 'screen3', 'screen4', 'screen5','screen6','screen7','screen8','screen9', 'screen10', 
+    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20','screen21'];
+
+    }
+
+
+  
     return feedList;
 }
 
@@ -364,15 +373,23 @@ function shuffle(array) {
  * Gets the name of the sketch associated with the given content id
  */
 
+
+if(treatment ==2) {
+    var sketches =  ['screen_blank1', 'screen_blank2', 'screen_blank3', 'screen_blank4', 'screen_blank5','screen_blank6', 'screen_blank7', 'screen_blank8', 'screen_blank9', 'screen_blank10','screen_blank11', 'screen_blank12', 'screen_blank13', 'screen_blank14', 'screen_blank15','screen_blank16', 'screen_blank17', 'screen_blank18', 'screen_blank19', 'screen_blank20','screen_blank21'];
+
+}
+
+if(treatment ==3) {
 var sketches = ['screen1', 'screen2', 'screen3', 'screen4', 'screen5','screen6','screen7','screen8','screen9', 'screen10', 
-    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20'];
+    'screen11', 'screen12', 'screen13', 'screen14', 'screen15','screen16','screen17','screen18','screen19', 'screen20','screen21'];
+}
+
 
 // var sketches_shuffle = shuffle(sketches);
 
 function getContentSketchName(id){
 
 // var sketches = ['screen1', 'screen1', 'screen1', 'screen1', 'screen1','screen1','screen1','screen1','screen1', 'screen1'];
-
 
 if (id < sketches.length)
 return sketches[id];

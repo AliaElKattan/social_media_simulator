@@ -21,27 +21,47 @@ function shuffle(array) {
 // Used like so
 
 var all_headlines = [
-	['NBC News', 'More Americans are accepting \n the reality that the Earth \n is getting warmer, but they’re \n still very much split on why \n and what to do about \n it, according to researchers.', 'twitter/images/nbc-image.png'],
-	['USA Today', "Tens of thousands of \nrape victims became \n pregnant in states \n with abortion bans, \n study estimates",'twitter/images/usatoday-image.png'],
-	['USA Today', 'Dry, sunny San Diego was hit \n with damaging floods. \nWhat\'s going on?\n Is it climate change?','twitter/images/usatoday-image.png'],
-	['ABC News', 'Schools are now the third- \nhighest location for \n hate crimes in the US, \n with as much as 10% of all\n reported hate crimes in 2022 \n happening at schools across\n the country, according \n to a new report from the FBI.','./twitter/images/usatoday-image.png'],
-	['ABC News', 'When a former college \n professor opened fire at \n the University of Nevada, \n Las Vegas, last month, \n he had with him \n two laminated cards with \n details about his targets','./twitter/images/usatoday-image.png'],
-	['NBC News', 'Nearly 40,000 migrants have \n arrived in Denver over the \npast year and the city \nis becoming overwhelmed. \nStarting Feb. 5, Denver \nwill limit the number of days \n migrants can stay in shelters \n and send those who \nexceed their stay \nout onto the streets.', './twitter/images/nbc-image.png'],
-	['Reuters', 'A 2023 judicial decision that \n would curb access to \n the abortion pill threatens\n to disrupt the authority \nof the FDA and harm the \nAmerican healthcare system\n, President Biden\'s\n administration told the \nSupreme Court, urging \nthe justices to reverse \nthe ruling', './twitter/images/reuters-image.jpeg'],
-	['Reuters', 'Climate change is the main \nculprit for a record \ndrought in the Amazon \nrainforest that has\n drained rivers, killed \nendangered dolphins and \nupended life for \nmillions of people in \nthe region, according \n to a study released', './twitter/images/reuters-image.jpeg'],
-	['AP', 'BREAKING: A North Dakota \n judge won’t block a \n law that doctors say \n puts them at risk of \nprosecution if they \nperform an abortion \nto save a patient’s \nlife or health.', './twitter/images/ap-image.jpeg'],
-	['AP','Iowa promised $75 million \nfor school safety. \nTwo shootings later, \nthe money is largely unspent', './twitter/images/ap-image.jpeg'],
-	['Bloomberg', 'A key Republican senator \ndefended an emerging \nborder security deal \nas a step toward \npotentially halting \nillegal immigration', './twitter/images/bloomberg-image.jpeg'],
-	['Bloomberg', 'Texas Governor Greg Abbott \n vowed to add more razor \nwire along the border with \nMexico to crack down \n on illegal immigration', './twitter/images/bloomberg-image.jpeg'],
-	['Pop Base', 'SZA reveals a \n collaboration with \n Paramore is in the works.', './twitter/images/popbase.jpeg'],
-	['Pop Base', 'The live-action \‘Avatar: Last \n Airbender\’ series on Netflix \nremoved how sexist Sokka \nwas in the original show:\n  \'We took out the element of \n how sexist [Sokka] was...\n there were a lot of moments in \n the original show that were iffy.\'', './twitter/images/popbase.jpeg'],
-	['Pop Base', 'Taylor Swift has generated \n an equivalent brand value \nof $331.5 million for t\nhe NFL and the Chiefs, FOS \nreports. This includes \nprint, digital, radio, TV,\n highlights, and social media \nsince the first game\n she attended in September.', './twitter/images/popbase.jpeg'],
-	['NBA', 'STEPHEN vs. SABRINA \n\n Stephen Curry and Sabrina \nIonescu will go head-to-head\n in the first NBA vs. WNBA \n 3-point challenge during \n#StateFarmSaturday on TNT \nat #NBAAllStar 2024!', './twitter/images/nbc-image.png'],
-	['Bleacher Report', 'Mahomes is only ONE WIN AWAY \nfrom passing Peyton Manning\'s\n playoffs wins record... \n \n He has played TEN FEWER \n playoff games than Manning', './twitter/images/bleacher.jpeg'],
-	['Bleacher Report', 'Suns last 6 Games \n \n Jan 19: DBook scores 52\n Jan. 21: KD scores 40\nJan. 22: KD scores 43\n Jan. 24: DBook scores 46\nJan. 26: DBook scores 63 \nJan. 28: DBook scores 44','./twitter/images/bleacher.jpeg'],
-	['NFL', 'If it\'s the AFC Championship,\n you know @tkelce will step up \nwith a big\-time performance: \n- 11 receptions \n- 116 yards \n- 1 TD','./twitter/images/nfl.jpeg'],
-	['PopCrave', 'Elon Musk reveals the \nfirst human patient \nhas received a brain implant \nfrom his startup, Neuralink, \nwhich aims to let people \ncontrol computers with thoughts.','./twitter/images/popcrave.jpeg'],
-['Researcher', ' This is an attention check. \n Write down the code RBT202 \n and enter it in the \n attention question in the \n upcoming final survey.','./twitter/images/nyu-image.jpeg']
+	
+
+	['USA Today', 'The case is the Supreme Court\'s\n first chance to weigh \nin on the state laws restricting \nabortion that have gone into \neffect since overturning\n Roe v. Wade.','twitter/images/usatoday-image.png'],
+	['USA Today', 'Five Maryland high school\n students were injured \nin a shooting at Schrom Hill \nPark during a senior skip \nday event, Greenbelt Police \nDepartment said.','twitter/images/usatoday-image.png'],
+	
+	['ABC News', 'Five teenagers were \ninjured after gunfire rang \nout at a large gathering \nof high school students \ntaking part in a senior \nskip day in Maryland,\n police said.','./twitter/images/abc-image.png'],
+	['ABC News', 'A Supreme Court decision \n that stripped protections \nfrom America\'s wetlands \nwill have reverberating impacts \non rivers that supply \ndrinking water all over\n the U.S., according to a report.','./twitter/images/abc-image.png'],
+
+
+	['NBC News', 'For the second time\n in two weeks, Arizona\n Republican lawmakers rejected \nan attempt to repeal a near-total \nban on abortion from 1864 \n that was upheld by the \nbattleground state\’s Supreme Court.', 'twitter/images/nbc-image.png'],
+	['NBC News', 'Impending abortion restrictions\n in Arizona could create a lack \nof access that spans into\n neighboring Mexican states \n— where abortion is banned \nwith few exceptions.', './twitter/images/nbc-image.png'],
+	
+	['Reuters', 'Climate change damage \ncould cost $38 trillion\n per year by 2050, study finds', './twitter/images/reuters-image.jpeg'],
+	['Reuters', 'US stocks ended mixed, \nwith the tech-heavy Nasdaq \nposting its biggest weekly \ndecline since October 2022,\n while growing pessimism \n that the Federal Reserve \nwould cut interest rates \nsoon also dented sentiment ', './twitter/images/reuters-image.jpeg'],
+	
+
+	['AP', 'Climate change concerns \ngrow, but few think \nBiden\'s climate law \nwill help, AP-NORC \n poll finds', './twitter/images/ap-image.jpeg'],
+	['AP','Sweeping gun legislation \napproved by Maine lawmakers \nafter deadliest shooting \nin state history', './twitter/images/ap-image.jpeg'],
+	
+	['Bloomberg', 'Rents are a main reason\n why inflation is still \ncurrently around 2.5\%,\n and the problem is more \nacute in the Northeast and \nMidwest than in the West \nand South, where new construction \nis off the charts and inflation \nis coming down fast', './twitter/images/bloomberg-image.jpeg'],
+	['Bloomberg', 'The US economy’s surprising\n strength is carrying\n global growth, but global\n finance leaders warn it\'s\n also making life difficult \nfor everyone else', './twitter/images/bloomberg-image.jpeg'],
+	
+	['Pop Base', 'Childish Gambino announces \nhe has two albums \ncoming — one of which \n will be the final \nChildish Gambino album.', './twitter/images/popbase.jpeg'],
+	['Pop Base', 'Post Malone jumps 32 spots \nto \#4 on Spotify Global\'s\n Daily Top Artists chart, \nfollowing the release of \'Fortnight.\'', './twitter/images/popbase.jpeg'],
+	
+	['NBA', 'Damian Lillard just recorded\n the most points in a half \nin Bucks playoff history \n\n35 PTS  \n\n6 3PM \n\n11-19 FGM\n', './twitter/images/nba-image.png'],
+
+	['Bleacher Report', 'Yuta Watanabe announces\n on IG live that he plans \nto deny his player \noption with the Grizzlies \nand go play in Japan \nfor the 2024-25 season, \n ending his 6-year NBA career', './twitter/images/bleacher.jpeg'],
+	['Bleacher Report', 'Ryan Garcia and Devin Haney \n agreed to betting $500K \n per pound if either man is \nover the 140-pound \nlimit at weigh-ins. \n\n Garcia ended up being \n3 pounds over','./twitter/images/bleacher.jpeg'],
+
+	['NFL', 'Eagles, WR DeVonta\n Smith agree on a 3-year\n, \$75M contract extension \nthat includes \$51M guaranteed.', './twitter/images/nfl.jpeg'],
+
+
+	['PopCrave', '\'What Was I Made For?\'\n by Billie Eilish has \nreached 800 MILLION \nstreams on Spotify.\n It\’s her 13th song \nto achieve this.','./twitter/images/popcrave.jpeg'],
+	['PopCrave', '\'COWBOY CARTER\' by Beyoncé is \n #2 on the Billboard 200 \nthis week, with 98K \nunits earned in its \nthird week. It previously \nspent two weeks at #1.','./twitter/images/popcrave.jpeg'],
+
+
+	['Researcher', ' This is an attention check. \n Write down the code RBT202 \n and enter it in the \n attention question in the \n upcoming final survey.','./twitter/images/nyu-image.jpeg']
+	
+
+	
 
 ];
 
